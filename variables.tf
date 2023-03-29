@@ -14,3 +14,9 @@ variable "secret_key" {
   description = "AWS Secret Access Key for the Terraform user"
   sensitive   = true
 }
+
+variable "bucket_name_prefix" {
+  type        = string
+  description = "Name of the S3 bucket to store the Terraform state"
+  default     = "terraform-remote-state"
+}
