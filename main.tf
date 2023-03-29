@@ -95,7 +95,7 @@ resource "aws_s3_bucket_policy" "remote_state" {
 
 # DynamoDB table - to store remote state lock
 resource "aws_dynamodb_table" "lock_table" {
-  name           = "${var.bucket_name_prefix}-lock-table"
+  name           = "${var.bucket_name_prefix}lock-table"
   billing_mode   = "PROVISIONED"
   read_capacity  = 5
   write_capacity = 5
