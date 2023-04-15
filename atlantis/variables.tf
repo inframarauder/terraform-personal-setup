@@ -14,13 +14,6 @@ variable "secret_key" {
   description = "AWS Secret Access Key for the Terraform user"
   sensitive   = true
 }
-
-variable "bucket_name" {
-  type        = string
-  description = "Name of the S3 bucket to store the Terraform state"
-  default     = "terraform-remote-state-subhasis020299"
-}
-
 variable "instance_type" {
   type        = string
   description = "Instance type for the Atlantis server"
