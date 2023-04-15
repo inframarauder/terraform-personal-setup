@@ -87,6 +87,11 @@ resource "aws_iam_role" "atlantis" {
   }
 }
 
+resource "aws_iam_role_policy_attachment" "atlantis" {
+  role       = aws_iam_role.atlantis.name
+  policy_arn = aws_iam_policy.atlantis.arn
+}
+
 resource "aws_iam_instance_profile" "atlantis" {
   name = "atlantis-ec2-instance-profile"
   role = aws_iam_role.atlantis.name
