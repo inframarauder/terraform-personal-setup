@@ -15,10 +15,10 @@ variable "secret_key" {
   sensitive   = true
 }
 
-variable "bucket_name_prefix" {
+variable "bucket_name" {
   type        = string
   description = "Name of the S3 bucket to store the Terraform state"
-  default     = "terraform-remote-state-"
+  default     = "terraform-remote-state-subhasis020299"
 }
 
 variable "instance_type" {

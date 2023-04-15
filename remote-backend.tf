@@ -1,6 +1,6 @@
 # S3 bucket - to store remote state
 resource "aws_s3_bucket" "remote_state" {
-  bucket_prefix = var.bucket_name_prefix
+  bucket = var.bucket_name
 
   tags = {
     "Terraform" = "true"
@@ -99,7 +99,7 @@ resource "aws_s3_bucket_policy" "remote_state" {
 
 # DynamoDB table - to store remote state lock
 resource "aws_dynamodb_table" "lock_table" {
-  name           = "${var.bucket_name_prefix}lock-table"
+  name           = "${var.bucket_name}-lock-table"
   billing_mode   = "PROVISIONED"
   read_capacity  = 5
   write_capacity = 5
@@ -111,9 +111,5 @@ resource "aws_dynamodb_table" "lock_table" {
   attribute {
     name = "LockID"
     type = "S"
-  }
-
-  lifecycle {
-    prevent_destroy = true
   }
 }
