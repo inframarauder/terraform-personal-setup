@@ -20,3 +20,31 @@ variable "bucket_name_prefix" {
   description = "Name of the S3 bucket to store the Terraform state"
   default     = "terraform-remote-state-"
 }
+
+variable "instance_type" {
+  type        = string
+  description = "Instance type for the Atlantis server"
+  default     = "t3a.micro"
+}
+
+variable "gh_username" {
+  type        = string
+  description = "GitHub username for the Atlantis server"
+}
+
+variable "gh_pat" {
+  type        = string
+  description = "GitHub Personal Access Token for the Atlantis server"
+}
+
+variable "gh_webhook_secret" {
+  type        = string
+  description = "GitHub webhook secret for the Atlantis server"
+  sensitive   = true
+}
+
+variable "gh_repo_allowlist" {
+  type        = string
+  description = "GitHub repositories that Atlantis will be allowed to access - comma separated strings"
+}
+
