@@ -6,6 +6,10 @@ resource "aws_s3_bucket" "remote_state" {
     "Terraform" = "true"
     "Purpose"   = "Terraform Remote State Storage"
   }
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "remote_state" {
@@ -107,5 +111,9 @@ resource "aws_dynamodb_table" "lock_table" {
   attribute {
     name = "LockID"
     type = "S"
+  }
+
+  lifecycle {
+    prevent_destroy = true
   }
 }
