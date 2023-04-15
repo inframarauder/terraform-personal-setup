@@ -1,4 +1,4 @@
-# terraform-remote-backend-setup
+# terraform-personal-setup
 
 Terraform configuration to setup my personal terraform workflow.
 
