@@ -1,4 +1,6 @@
 # terraform-remote-backend-setup
 
-Terraform configuration to setup remote backend on AWS for my personal Terraform projects.
-Creates an S3 bucket with SSE encryption and a DynamoDB table for state locking.
+Terraform configuration to setup my personal terraform workflow.
+
+- remote backend : S3 bucket with SSE encryption, dynamodb table (for state locking)
+- atlantis : EC2 instance with atlantis server and GitHub webhook configured for PR automation
